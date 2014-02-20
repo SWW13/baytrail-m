@@ -1,0 +1,21 @@
+workaround for black screen
+
+From: Jacek Danecki <jacek.m.danecki@gmail.com>
+
+Signed-off-by: Jacek Danecki <jacek.m.danecki@gmail.com>
+---
+ drivers/gpu/drm/i915/intel_crt.c |    1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/gpu/drm/i915/intel_crt.c b/drivers/gpu/drm/i915/intel_crt.c
+index 5b444a4..e02475f 100644
+--- a/drivers/gpu/drm/i915/intel_crt.c
++++ b/drivers/gpu/drm/i915/intel_crt.c
+@@ -376,6 +376,7 @@ static bool valleyview_crt_detect_hotplug(struct drm_connector *connector)
+ 		ret = false;
+ 
+ 	DRM_DEBUG_KMS("valleyview hotplug adpa=0x%x, result %d\n", adpa, ret);
++	ret = true;
+ 
+ 	return ret;
+ }

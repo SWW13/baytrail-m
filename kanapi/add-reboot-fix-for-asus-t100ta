@@ -1,0 +1,51 @@
+add reboot fix for Asus T100TA
+
+From: Jacek Danecki <jacek.m.danecki@gmail.com>
+
+Signed-off-by: Jacek Danecki <jacek.m.danecki@gmail.com>
+---
+ arch/x86/kernel/reboot.c    |    9 +++++++++
+ drivers/firmware/dmi_scan.c |    3 ++-
+ 2 files changed, 11 insertions(+), 1 deletion(-)
+
+diff --git a/arch/x86/kernel/reboot.c b/arch/x86/kernel/reboot.c
+index c752cb4..72b3620 100644
+--- a/arch/x86/kernel/reboot.c
++++ b/arch/x86/kernel/reboot.c
+@@ -190,6 +190,15 @@ static struct dmi_system_id __initdata reboot_dmi_table[] = {
+ 			DMI_MATCH(DMI_BOARD_NAME, "P4S800"),
+ 		},
+ 	},
++	/* ASUS */
++	{	/* Handle problems with rebooting on ASUS T100TA */
++		.callback = set_pci_reboot,
++		.ident = "ASUS T100TA",
++		.matches = {
++			DMI_MATCH(DMI_BOARD_VENDOR, "ASUSTeK COMPUTER INC."),
++			DMI_MATCH(DMI_BOARD_NAME, "T100TA"),
++		},
++	},
+ 
+ 	/* Dell */
+ 	{	/* Handle problems with rebooting on Dell DXP061 */
+diff --git a/drivers/firmware/dmi_scan.c b/drivers/firmware/dmi_scan.c
+index c7e81ff..9ca6778 100644
+--- a/drivers/firmware/dmi_scan.c
++++ b/drivers/firmware/dmi_scan.c
+@@ -159,6 +159,8 @@ static void __init dmi_save_ident(const struct dmi_header *dm, int slot,
+ 	if (p == NULL)
+ 		return;
+ 
++	if (slot == DMI_BOARD_VENDOR) printk("DMI_BOARD_VENDOR: %s\n", p);
++	if (slot == DMI_BOARD_NAME) printk("DMI_BOARD_NAME: %s\n", p);
+ 	dmi_ident[slot] = p;
+ }
+ 
+@@ -642,7 +644,6 @@ int dmi_check_system(const struct dmi_system_id *list)
+ 			if (d->callback && d->callback(d))
+ 				break;
+ 		}
+-
+ 	return count;
+ }
+ EXPORT_SYMBOL(dmi_check_system);
