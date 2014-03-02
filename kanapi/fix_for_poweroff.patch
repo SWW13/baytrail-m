@@ -1,0 +1,28 @@
+commit 0fa54c20b465b6b5e8e872d970ba9188ab10634a
+Author: Jacek Danecki <jacek.m.danecki@gmail.com>
+Date:   Fri Feb 21 00:33:09 2014 +0000
+
+    Fix for poweroff on Asus T100TA
+    
+    Ported from https://github.com/AdamWill/baytrail-m
+    
+    Signed-off-by: Jacek Danecki <jacek.m.danecki@gmail.com>
+
+diff --git a/arch/x86/kernel/reboot.c b/arch/x86/kernel/reboot.c
+index 72b3620..48ab7c6 100644
+--- a/arch/x86/kernel/reboot.c
++++ b/arch/x86/kernel/reboot.c
+@@ -634,6 +634,13 @@ static void native_machine_power_off(void)
+ 			machine_shutdown();
+ 		pm_power_off();
+ 	}
++
++#ifdef CONFIG_EFI
++       if (efi_enabled(EFI_RUNTIME_SERVICES))
++               efi.reset_system(EFI_RESET_SHUTDOWN,
++                                EFI_SUCCESS, 0, NULL);
++#endif
++
+ 	/* A fallback in case there is no PM info available */
+ 	tboot_shutdown(TB_SHUTDOWN_HALT);
+ }

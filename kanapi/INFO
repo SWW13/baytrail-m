@@ -1,0 +1,17 @@
+under tests:
+3.14.-rc4 -> linus
+patch: workaround for black screen
+patch: add reboot fix
+patch: fix for poweroff
+merge: 3.14-rc4 -> linux-pm/master -> pstate fix
+notsc in grub.cfg
+---------------------------------
+todo:
+3.14-rc3 -> drm-intel-nightly
+3.14-rc4 -> tip/master
+3.14-rc4 -> lrg (byt)
+broonie -> topic/intel 3.14.rc1 (byt)
+3.14-rc4 -> broonie/for-next (byt)
+mfleming
+
+
