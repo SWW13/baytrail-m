@@ -3,16 +3,19 @@ under tests:
 patch: workaround for black screen
 patch: add reboot fix
 patch: fix for poweroff
+
 merge: 3.14-rc4 -> linux-pm/master -> pstate fix
+merge: 3.14-rc4 -> broonie/for-next (byt)
+
 parameters in grub.cfg:
 modprobe.blacklist=mmc_block notsc video=VGA-1:1366x768@60e
+
 --------------------------------------------------------------------
 todo:
 3.14-rc3 -> drm-intel-nightly
 3.14-rc4 -> tip/master
 3.14-rc4 -> lrg (byt)
 broonie -> topic/intel 3.14.rc1 (byt)
-3.14-rc4 -> broonie/for-next (byt)
 mfleming
 
 
