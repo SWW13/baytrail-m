@@ -86,12 +86,12 @@ RECMIXR HP0R - mute
 RECMIXR INR - unmute
 REXMIXR OUT MIXR - mute
 SDI select - IF1
-SPK MIXL DAC L1 - unmute
+SPK MIXL DAC L1 - unmute - speaker left
 SPK MIXL DAC L2 - mute
 SPK MIXL INL - mute
 SPK MIXL OUT MIXL - mute
 SPK MIXL REC MIXL - mute
-SPK MIXR DAC R1 - unmute
+SPK MIXR DAC R1 - unmute - speaker right
 SPK MIXR DAC R2 - mute
 SPK MIXR INR - mute
 SPK MIXR OUT MIXR - mute
@@ -99,11 +99,11 @@ SPK MIXR REC MIXR - mute
 SPOL MIX BST1 - mute
 SPOL MIX DAC L1 - mute
 SPOL MIX DAC R1 - mute
-SPOL MIX SPKVOL L - unmute
-SPOL MIX SPKVOL R - mute
+SPOL MIX SPKVOL L - unmute - speaker left
+SPOL MIX SPKVOL R - mute - speaker left
 SPOR MIX BST1 - mute
 SPOR MIX DAC R1 - mute
-SPOR MIX SPKVOL R - unmute
+SPOR MIX SPKVOL R - unmute - speaker right
 Stereo ADC MIXL ADC1 - unmute
 Stereo ADC MIXL ADC2 - mute
 Stereo ADC MIXR ADC1 - unmute
@@ -111,8 +111,8 @@ Stereo ADC MIXR ADC2 - mute
 Stereo ADC1 Mux - ADC
 Stereo ADC2 Mux - DMIC1
 Stereo DAC MIXL ANC - mute
-Stereo DAC MIXL DAC L1 - unmute
+Stereo DAC MIXL DAC L1 - unmute - left speaker
 Stereo DAC MIXL DAC L2 - mute
 Stereo DAC MIXR ANC - mute
-Stereo DAC MIXR DAC R1 - unmute
+Stereo DAC MIXR DAC R1 - unmute - right speaker
 Stereo DAC MIXR DAC R2 - mute
