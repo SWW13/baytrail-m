@@ -7,6 +7,8 @@ patch: fix for poweroff
 merge: 3.14-rc4 -> linux-pm/master -> pstate fix
 merge: 3.14-rc4 -> broonie/for-next (byt)
 
+patch for battery status: bug 69011 (bugzilla.kernel.org) - draft.patch
+----------------------------------------------------------
 parameters in grub.cfg:
 modprobe.blacklist=mmc_block notsc video=VGA-1:1366x768@60e
 
