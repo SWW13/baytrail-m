@@ -1,9 +1,23 @@
+3.17.0-rc5 asus6 https://github.com/jdanecki/linux.git branch asus6
+doesn't work
+	backlight
+
+works
+	battery status
+	touch
+	sound 
+	reboot
+
+parameters in grub.cfg:
+	modprobe.blacklist=mmc_block clock=tsc
+
+--------------------------------------------------------------------------------
 3.17.0-rc5 asus5 commit ab7f1ab https://github.com/jdanecki/linux.git branch asus5
 doesn't work
 	battery status
 	backlight
 
-work
+works
 	touch
 	sound 
 	reboot
