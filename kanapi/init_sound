@@ -1,0 +1,3 @@
+alsactl init
+alsactl restore -f t100_B.state
+

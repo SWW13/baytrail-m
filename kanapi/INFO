@@ -1,0 +1,65 @@
+3.17.0-rc5 asus6 https://github.com/jdanecki/linux.git branch asus6
+doesn't work
+	backlight
+
+works
+	battery status
+	touch
+	sound 
+	reboot
+
+parameters in grub.cfg:
+	modprobe.blacklist=mmc_block clock=tsc
+
+--------------------------------------------------------------------------------
+3.17.0-rc5 asus5 commit ab7f1ab https://github.com/jdanecki/linux.git branch asus5
+doesn't work
+	battery status
+	backlight
+
+works
+	touch
+	sound 
+	reboot
+
+parameters in grub.cfg:
+	modprobe.blacklist=mmc_block clock=tsc
+
+--------------------------------------------------------------------------------
+3.15 from linus master commit 6391f34
+battery status doesn't work
+tsc problem
+touch works
+backlight doesn't work
+reboot doesn't work
+
+reboot=pci,force
+reboot=p,f
+---------------------------------------------------------------------------------
+3.15-rc2
+drm-intel-nightly merged
+patches for dsi support added
+patch for battery status: bug 69011 (bugzilla.kernel.org) - debug.patch
+
+problem with console 
+reboot doesn't work
+---------------------------------------------------------------------------------
+3.14-rc4 from linus master git://github.com/jdanecki/linux.git branch asus1
+patch: workaround for black screen
+patch: add reboot fix
+patch: fix for poweroff
+
+merge: 3.14-rc4 -> linux-pm/master -> pstate fix
+merge: 3.14-rc4 -> broonie/for-next (byt)
+
+patch for battery status: bug 69011 (bugzilla.kernel.org) - draft.patch
+
+parameters in grub.cfg:
+modprobe.blacklist=mmc_block notsc video=VGA-1:1366x768@60e
+
+tsc disabled, hpet used
+battery works
+touch works
+sound works
+reboot works
+
